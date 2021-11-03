@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -12,6 +13,7 @@ using TechJobsAuthentication.ViewModels;
 
 namespace TechJobsAuthentication.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private JobDbContext context;
@@ -21,6 +23,7 @@ namespace TechJobsAuthentication.Controllers
             context = dbContext;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             List<Job> jobs = context.Jobs.ToList();

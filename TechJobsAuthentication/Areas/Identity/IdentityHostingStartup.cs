@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TechJobsAuthentication.Areas.Identity.Data;
 using TechJobsAuthentication.Data;
 
 [assembly: HostingStartup(typeof(TechJobsAuthentication.Areas.Identity.IdentityHostingStartup))]
